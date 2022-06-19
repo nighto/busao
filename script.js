@@ -34,8 +34,12 @@ const addMarker = busData => {
 }
 
 const populateSelect = () => {
+    // unique values, as an array from set
     busLines = [...new Set(data.DATA.map(b => b[2]))]
+    // eventually, implement sort function to make SV lines near their numbers,
+    // as well as bump lines that should start with 0
     busLines.sort()
+    // then for each bus line, create a select option
     busLines.forEach(bus => {
         if (bus === '') return null
         let option = document.createElement('option')
