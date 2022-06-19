@@ -58,7 +58,7 @@ const storeData = data => {
 }
 
 const loadRemoteData = () => {
-    fetch(HARDCODED_API)
+    fetch(API)
         .then(response => response.json())
         .then(data => storeData(data))
         .then(data => processData(data))
